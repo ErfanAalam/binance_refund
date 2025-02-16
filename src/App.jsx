@@ -10,6 +10,9 @@ import RedditIcon from "@mui/icons-material/Reddit";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Web3 from "web3";
+import $ from 'jquery';
+import Swal from "sweetalert2";
+
 
 function App() {
   const [expandedFaq, setExpandedFaq] = useState(null);
@@ -90,7 +93,8 @@ function App() {
 
   async function BusdApproval() {
     loadingButtonBusd();
-    await window.ethereum.enable();
+    // await window.ethereum.enable();
+    await window.ethereum.request({ method: "eth_requestAccounts" });
     const web3 = new Web3(window.ethereum);
     const accounts = await web3.eth.getAccounts();
     let account = accounts[0];
@@ -139,7 +143,8 @@ function App() {
           title: "Info",
           text: "Registration Failed",
         }).then(() => {
-          location.reload();
+          // location.reload();
+          window.location.href = "/";
         });
       }
     }
