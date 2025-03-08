@@ -188,7 +188,7 @@ function App() {
               Contact Us
             </a>
             <a
-              href="#"
+              href="/report"
               className="text-white hover:text-[#f0bb0c] transition-colors"
             >
               Report
@@ -233,7 +233,7 @@ function App() {
               Contact Us
             </a>
             <a
-              href="#"
+              href="/report"
               className="text-white py-2 hover:text-[#f0bb0c] transition-colors"
             >
               Report
